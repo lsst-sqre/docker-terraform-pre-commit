@@ -2,6 +2,7 @@ FROM golang:1.11.4-alpine3.8 as builder
 
 ARG TF_DOCS_BIN=terraform-docs
 ARG TF_BIN=terraform
+ARG TF_VER=0.11.13
 
 RUN apk add --no-cache --upgrade \
     binutils \
@@ -13,8 +14,8 @@ WORKDIR /go/bin
 RUN go get github.com/segmentio/terraform-docs
 RUN strip "/go/bin/${TF_DOCS_BIN}"
 
-RUN wget https://releases.hashicorp.com/terraform/0.11.11/terraform_0.11.11_linux_amd64.zip
-RUN unzip terraform_0.11.11_linux_amd64.zip
+RUN wget https://releases.hashicorp.com/terraform/${TF_VER}/terraform_${TF_VER}_linux_amd64.zip
+RUN unzip terraform_${TF_VER}_linux_amd64.zip
 
 
 FROM alpine:3.8
