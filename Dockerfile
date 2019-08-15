@@ -2,7 +2,7 @@ FROM golang:1.11.4-alpine3.8 as builder
 
 ARG TF_DOCS_BIN=terraform-docs
 ARG TF_BIN=terraform
-ARG TF_VER=0.11.13
+ARG TF_VER=0.12.6
 
 RUN apk add --no-cache --upgrade \
     binutils \
