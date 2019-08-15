@@ -1,4 +1,4 @@
-FROM golang:1.11.4-alpine3.8 as builder
+FROM golang:1.12.8-alpine3.10 as builder
 
 ARG TF_DOCS_BIN=terraform-docs
 ARG TF_BIN=terraform
