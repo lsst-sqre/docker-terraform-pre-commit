@@ -20,7 +20,7 @@ RUN unzip terraform_${TF_VER}_linux_amd64.zip
 
 FROM alpine:3.8
 
-ARG PRE_COMMIT_VER=1.14.2
+ARG PRE_COMMIT_VER=1.18.1
 
 RUN apk add --no-cache --upgrade \
     bash \
