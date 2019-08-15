@@ -18,7 +18,7 @@ RUN wget https://releases.hashicorp.com/terraform/${TF_VER}/terraform_${TF_VER}_
 RUN unzip terraform_${TF_VER}_linux_amd64.zip
 
 
-FROM alpine:3.8
+FROM alpine:3.10
 
 ARG PRE_COMMIT_VER=1.18.1
 
