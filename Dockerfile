@@ -1,8 +1,8 @@
-FROM golang:1.11.4-alpine3.8 as builder
+FROM golang:1.12.8-alpine3.10 as builder
 
 ARG TF_DOCS_BIN=terraform-docs
 ARG TF_BIN=terraform
-ARG TF_VER=0.11.13
+ARG TF_VER=0.12.6
 
 RUN apk add --no-cache --upgrade \
     binutils \
@@ -18,9 +18,9 @@ RUN wget https://releases.hashicorp.com/terraform/${TF_VER}/terraform_${TF_VER}_
 RUN unzip terraform_${TF_VER}_linux_amd64.zip
 
 
-FROM alpine:3.8
+FROM alpine:3.10
 
-ARG PRE_COMMIT_VER=1.14.2
+ARG PRE_COMMIT_VER=1.18.1
 
 RUN apk add --no-cache --upgrade \
     bash \
